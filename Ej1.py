@@ -88,6 +88,9 @@ vector_principal = vectores_propios[:, indice_max].real
 pesos = vector_principal / np.sum(vector_principal)
 Valoresprioridades = prioridadescp * pesos
 
+print(f"El valor global de la prioridad alta:{sum(Valoresprioridades[0])}")
+print(f"El valor global de la prioridad media:{sum(Valoresprioridades[1])}")
+print(f"El valor global de la prioridad baja:{sum(Valoresprioridades[2])} \n")
 valoresFinales = []
 
 provinciasbajas = []
@@ -127,6 +130,6 @@ for val,prov in zip(valores.T,provincias):
         print(f"Valor de {prov}: {aux:.4f} -> Bajo")
         provinciasbajas.append(prov)
 
-print("Bajas:",provinciasbajas)
+print("\nBajas:",provinciasbajas)
 print("Medias:",provinciasmedias)
 print("Altas:",provinciasaltas)
